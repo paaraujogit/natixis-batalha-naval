@@ -2,21 +2,36 @@ package view;
 
 import java.util.Scanner;
 import model.Barco;
+import controller.PosicaoBarcosController;
 
 public class PosicaoBarcosView {
 
-    public void main(String[] args) {
-        colocarBarco(3);
-    }
+   public void colocarBarco(int tamanho) {
+       
+        PosicaoBarcosController controller = new PosicaoBarcosController();
 
-    public void colocarBarco(int tamanho) {
         Scanner sc = new Scanner(System.in);
+        int linha = -1;
+        int coluna = -1;
+
+        System.out.println("Qual a posicão do barco de tamanho " + tamanho);
+
+        do {
+            System.out.println("Linha: ");
+            linha = sc.nextInt();
+        } while (controller.verificaLimites(linha));
+
+        do {
+            System.out.println("Coluna: ");
+            coluna = sc.nextInt();
+            sc.nextLine();
+        } while (controller.verificaLimites(coluna));
 
         System.out.println("Qual a posicão do barco de tamanho " + tamanho);
         System.out.println("Linha: ");
-        int linha = sc.nextInt();
+        linha = sc.nextInt();
         System.out.println("Coluna: ");
-        int coluna = sc.nextInt();
+        coluna = sc.nextInt();
         sc.nextLine();
 
         String orientacao = "";
@@ -37,11 +52,12 @@ public class PosicaoBarcosView {
                 default:
                     System.out.println("Orientação (H/V)");
                     orientacao = sc.nextLine().toLowerCase();
+                    System.out.println("Hor " + orientacao);
+
                     escolha = true;
             }
-            
+
         } while (escolha);
-
     }
-
+   
 }
