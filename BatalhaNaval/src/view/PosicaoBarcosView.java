@@ -12,7 +12,7 @@ public class PosicaoBarcosView {
     public static void pedirBarco(int tamanho) {
         Scanner sc = new Scanner(System.in);
 
-        System.out.println("Qual a posicão do barco de tamnho " + tamanho);
+        System.out.println("Qual a posicão do barco de tamanho " + tamanho);
         System.out.println("Linha: ");
         int linha = sc.nextInt();
         System.out.println("Coluna: ");
@@ -36,11 +36,7 @@ public class PosicaoBarcosView {
                     break;
                 default:
                     System.out.println("Orientação (H/V)");
-                    // sc.nextLine();
                     orientacao = sc.nextLine().toLowerCase();
-                    
-                    //   char ori = orientacao.charAt(0);         
-                    System.out.println("Hor " + orientacao);
                     escolha = true;
             }
             
