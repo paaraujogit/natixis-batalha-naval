@@ -17,17 +17,21 @@ public class JogadaController {
         this.jogador2 = jogador2;
     }
 
-    private void fazerJogada(Posicao posicao) {
+    public void fazerJogada(int x, int y) {
         if (jogadaValida(posicao)) {
-            
-            posicao.setEstado(Estado.INTACTO);
-            jogo.mudarTurno();
-            
+            if (posicao.isTemBarco()) {
+                posicao.setEstado(Estado.ATINGIDO);
+                
+                jogo.mudarTurno();
+                
+            } else {
+                posicao.setEstado(Estado.FALHO);
+                jogo.mudarTurno();
+            }
         }
-
     }
 
-    private boolean jogadaValida(Posicao posicao) {
+    public boolean jogadaValida(Posicao posicao) {
         return posicao.getEstado() == Estado.INTACTO;
     }
 }

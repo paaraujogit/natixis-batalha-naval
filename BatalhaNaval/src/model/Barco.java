@@ -24,7 +24,7 @@ public class Barco {
 
 
     
-    public void incrementaTirosAcertados(){
+    private void incrementaTirosAcertados(){
         this.tirosAcertados++;
     }
     
@@ -48,7 +48,21 @@ public class Barco {
         return orientacao;
     }
     
-    
+    public boolean fuiAtingido(int linhaa, int colunaa) {
+        if(orientacao==Orientacao.HORIZONTAL) {
+            if(linhaa == linha && colunaa >= coluna && colunaa < coluna + tamanho){
+                incrementaTirosAcertados();
+                return true;
+            }
+        }
+        else {
+            if(colunaa == coluna && linhaa >= linha && linhaa < linha + tamanho){
+                incrementaTirosAcertados();
+                return true;
+            }
+        }
+        return false;
+    }
     
     
 }
