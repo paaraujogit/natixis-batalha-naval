@@ -7,9 +7,8 @@ package view;
 
 import controller.JogadaController;
 import java.util.Scanner;
-import model.Jogador;
 import model.Jogo;
-import model.Tabuleiro;
+import model.Posicao;
 import utils.Utils;
 
 /**
@@ -19,30 +18,33 @@ import utils.Utils;
 public class JogadaView {
     
     private Jogo jogo;
-    public JogadaController jc = new  JogadaController(jogo);
- 
-    
+
     public void jogadaView(Jogo jogo){
-        
+        JogadaController jc = new  JogadaController(jogo);
         Utils.printTabuleiro(jogo.jogadorAtual().getTabuleiroEnimigo());
         Scanner scan = new Scanner(System.in);
         int linha=-1;
-        
-        while(linha<0 || linha > Tabuleiro.COLUNAS){
+        int coluna = -1;
+        /*
+        do{
+            while(linha<0 || linha > Tabuleiro.COLUNAS){
             System.out.println("Insere o número da linha 0-9: ");
             linha = scan.nextInt();
         }
+       
         
-        int coluna = -1;
         while(coluna<0 || coluna >Tabuleiro.LINHAS){
-            System.out.println("Insere o número da coluna 0-9: ");
-            coluna = scan.nextInt();
+                System.out.println("Insere o número da coluna 0-9: ");
+                coluna = scan.nextInt();
         }
-        // enviar as coordenadas para o jc ver estado das coordenadas
-        // 
         
-  
         
+        }while(jc.jogadaValida(linha, coluna));
+        
+        jc.fazerJogada(linha, coluna);
+        Utils.printTabuleiro(jogo.jogadorAtual().getTabuleiroEnimigo());
+        jc.mudarTurno(jogo);
+        */
         
     }
     
