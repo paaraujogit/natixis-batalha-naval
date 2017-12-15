@@ -13,6 +13,15 @@ public class Jogador {
         this.tabuleiroProprio = tabuleiroProprio;
         this.tabuleiroEnimigo = tabuleiroEnimigo;
     }
+
+    public Tabuleiro getTabuleiroProprio() {
+        return tabuleiroProprio;
+    }
+
+    public Tabuleiro getTabuleiroEnimigo() {
+        return tabuleiroEnimigo;
+    }
+    
     
     
 }
