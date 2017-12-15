@@ -25,6 +25,7 @@ public class Jogo {
 
     Turno turno = Turno.jogador1;
 
+
     public Jogador getJogador1() {
         return jogador1;
     }
@@ -37,4 +38,21 @@ public class Jogo {
         turno = turno.mudarTurno();
     }
 
+
+    public Jogo(Jogador jogador1, Jogador jogado2) {
+        this.jogador1 = jogador1;
+    }
+    
+    
+    
+    
+    public void mudarTurno(){
+       turno = turno.mudarTurno();
+    }
+    
+    public void jogo(){
+        
+    }
+   
+>>>>>>> 23f8c53dfe4550a6018565cf4d224396512a429b
 }
