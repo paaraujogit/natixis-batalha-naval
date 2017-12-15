@@ -7,6 +7,7 @@ import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import model.Jogador;
+import model.Jogo;
 import model.Tabuleiro;
 
 public class IniciarTabuleiroController {
@@ -25,7 +26,7 @@ public class IniciarTabuleiroController {
         
     }
     
-    public void menu()  {
+    public Jogo menu()  {
     
         System.out.println("******* MENU *******");
         System.out.println("Sélectionnez une option:");
@@ -36,21 +37,25 @@ public class IniciarTabuleiroController {
         
         String option = scan.nextLine();
 
+        Jogo jogo = null;
         if(option.equals("1")) {
+            
+            
             
             Tabuleiro tab1 = new Tabuleiro();
             Tabuleiro tab2 = new Tabuleiro();
             
-            System.out.println("What's my name?: #DrakeFeatRhianna");
-            System.out.println("https://www.youtube.com/watch?v=U0CGsw6h60k");
-            System.out.println("==>");
-            String nomeJog = scan.nextLine();
-            Jogador jog = new Jogador(nomeJog, tab1, tab2);    
+            System.out.println("Nome jogador1:");
+            String nomeJog1 = scan.nextLine();
+            Jogador jog1 = new Jogador(nomeJog1, tab1, tab2); 
+            System.out.println("Nome jogador2:");
+            String nomeJog2 = scan.nextLine();
+            Jogador jog2 = new Jogador(nomeJog2, tab2, tab1);
+            jogo = new Jogo(jog1, jog2);
             
-        } else if(option.equals("2")) {
-            
-            System.exit(1);
-        }
+        } 
+        
+        return jogo;
         
     }
 

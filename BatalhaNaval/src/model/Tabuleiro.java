@@ -11,4 +11,8 @@ public class Tabuleiro {
     public Tabuleiro(){
         tabuleiro = new Posicao[LINHAS][COLUNAS];
     }
+    
+    public Posicao[][] getTabuleiro() {
+        return tabuleiro;
+    }
 }
