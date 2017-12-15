@@ -3,12 +3,46 @@ package view;
 import java.util.Scanner;
 import model.Barco;
 import controller.PosicaoBarcosController;
+import model.Jogo;
 
 public class PosicaoBarcosView {
+    
+     PosicaoBarcosController controller;
+     Jogo jogo;
+        
+        public PosicaoBarcosView(Jogo jogo) {
+            this.jogo = jogo;
+            controller = new PosicaoBarcosController(jogo);
+    }
 
+        public void init(){
+            colocarBarco(3);
+            colocarBarco(3);
+            colocarBarco(2);
+            colocarBarco(2);
+            colocarBarco(2);
+            colocarBarco(1);
+            colocarBarco(1);
+            colocarBarco(1);
+            colocarBarco(1);
+            colocarBarco(4);
+            jogo.mudarTurno();
+            colocarBarco(3);
+            colocarBarco(3);
+            colocarBarco(2);
+            colocarBarco(2);
+            colocarBarco(2);
+            colocarBarco(1);
+            colocarBarco(1);
+            colocarBarco(1);
+            colocarBarco(1);
+            colocarBarco(4);
+        }
+        
+        
    public void colocarBarco(int tamanho) {
        
-        PosicaoBarcosController controller = new PosicaoBarcosController();
+       
 
         Scanner sc = new Scanner(System.in);
         int linha = -1;
@@ -35,7 +69,7 @@ public class PosicaoBarcosView {
         sc.nextLine();
 
         String orientacao = "";
-        Barco.Orientacao orientacaoB;
+        Barco.Orientacao orientacaoB = null;
 
         boolean escolha = false;
         do {
@@ -58,6 +92,10 @@ public class PosicaoBarcosView {
             }
 
         } while (escolha);
+        
+        controller.criarBarco(tamanho, linha, coluna, orientacaoB);
     }
+
+    
    
 }
