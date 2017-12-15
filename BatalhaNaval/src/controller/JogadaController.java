@@ -23,7 +23,7 @@ public class JogadaController {
 
     public void fazerJogada(int x, int y) {
         Posicao posicao = jogo.jogadorAtual().getTabuleiroEnimigo().getTabuleiro()[x][y];
-        if (jogadaValida(posicao)) {
+        if (jogadaValida(x,y)) {
             if (posicao.isTemBarco()) {
                 posicao.setEstado(Estado.ATINGIDO);
                 List<Barco> barcos =jogo.jogadorAtual().getBarcos();
@@ -42,7 +42,8 @@ public class JogadaController {
         }
     }
 
-    public boolean jogadaValida(Posicao posicao) {
+    public boolean jogadaValida(int x, int y) {
+        Posicao posicao = jogo.jogadorAtual().getTabuleiroEnimigo().getTabuleiro()[x][y];
         return posicao.getEstado() == Estado.INTACTO;
     }
     
