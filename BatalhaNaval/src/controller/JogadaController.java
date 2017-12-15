@@ -14,6 +14,7 @@ public class JogadaController {
     private Jogo jogo;
     private Jogador jogador1;
     private Jogador jogador2;
+    private boolean fim = false;
 
     public JogadaController(Jogo jogo) {
         this.jogo = jogo;
@@ -31,7 +32,7 @@ public class JogadaController {
                     barco.fuiAtingido(x, y);
                 });
                 if(jogo.jogadorAtual().perdi()) {
-                    //completar
+                    fim=true;
                 }
 
                 
@@ -49,5 +50,9 @@ public class JogadaController {
     
     public void mudarTurno(Jogo jogo){
         jogo.mudarTurno();
+    }
+    
+    public boolean getFim() {
+        return fim;
     }
 }
