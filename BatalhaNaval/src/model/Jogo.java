@@ -25,7 +25,7 @@ public class Jogo {
     
     
     public void mudarTurno(){
-        turno.mudarTurno();
+       turno = turno.mudarTurno();
     }
     
    
