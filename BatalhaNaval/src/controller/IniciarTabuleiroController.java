@@ -34,28 +34,34 @@ public class IniciarTabuleiroController {
         System.out.println("2 - Exit!");
         
         Scanner scan = new Scanner(System.in);
-        
-        String option = scan.nextLine();
-
+   
+        String input = "";
         Jogo jogo = null;
-        if(option.equals("1")) {
-            
-            
-            
-            Tabuleiro tab1 = new Tabuleiro();
-            Tabuleiro tab2 = new Tabuleiro();
-            
-            System.out.println("Nome jogador1:");
-            String nomeJog1 = scan.nextLine();
-            Jogador jog1 = new Jogador(nomeJog1, tab1, tab2); 
-            System.out.println("Nome jogador2:");
-            String nomeJog2 = scan.nextLine();
-            Jogador jog2 = new Jogador(nomeJog2, tab2, tab1);
-            jogo = new Jogo(jog1, jog2);
-            
-        } 
         
-        return jogo;
+        do {    
+                input = scan.nextLine();
+                if(input.equals("1")) {
+
+                Tabuleiro tab1 = new Tabuleiro();
+                Tabuleiro tab2 = new Tabuleiro();
+
+                System.out.println("Nome jogador1:");
+                String nomeJog1 = scan.nextLine();
+                Jogador jog1 = new Jogador(nomeJog1, tab1, tab2); 
+                System.out.println("Nome jogador2:");
+                String nomeJog2 = scan.nextLine();
+                Jogador jog2 = new Jogador(nomeJog2, tab2, tab1);
+                jogo = new Jogo(jog1, jog2);
+                return jogo;
+            }
+        } while (!input.equals("2"));
+        System.out.println("Adieu");
+        System.exit(0);
+        
+        return null;
+        
+        
+        
         
     }
 
