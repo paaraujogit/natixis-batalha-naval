@@ -1,5 +1,7 @@
 package controller;
 
+import java.util.List;
+import model.Barco;
 import model.Jogador;
 import model.Jogo;
 import model.Posicao;
@@ -20,11 +22,18 @@ public class JogadaController {
     }
 
     public void fazerJogada(int x, int y) {
+        Posicao posicao = jogo.jogadorAtual().getTabuleiroEnimigo().getTabuleiro()[x][y];
         if (jogadaValida(posicao)) {
             if (posicao.isTemBarco()) {
                 posicao.setEstado(Estado.ATINGIDO);
-                
-                jogo.mudarTurno();
+                List<Barco> barcos =jogo.jogadorAtual().getBarcos();
+                barcos.stream().forEach((barco) -> {
+                    barco.fuiAtingido(x, y);
+                });
+                if(jogo.jogadorAtual().perdi()) {
+                    //completar
+                }
+
                 
             } else {
                 posicao.setEstado(Estado.FALHO);
@@ -35,5 +44,9 @@ public class JogadaController {
 
     public boolean jogadaValida(Posicao posicao) {
         return posicao.getEstado() == Estado.INTACTO;
+    }
+    
+    public void mudarTurno(Jogo jogo){
+        jogo.mudarTurno();
     }
 }

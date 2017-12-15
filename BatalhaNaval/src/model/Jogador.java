@@ -21,7 +21,14 @@ public class Jogador {
     public Tabuleiro getTabuleiroEnimigo() {
         return tabuleiroEnimigo;
     }
+
+    public List<Barco> getBarcos() {
+        return barcos;
+    }
     
+    public boolean perdi(){
+       return barcos.stream().noneMatch(barco -> !barco.isAfundado());
+    }
     
     
 }

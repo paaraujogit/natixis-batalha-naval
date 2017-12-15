@@ -2,13 +2,21 @@ package model;
 
 
 public class Barco {
+
+    /**
+     * @return the afundado
+     */
+    public boolean isAfundado() {
+        return afundado;
+    }
     public enum Orientacao{HORIZONTAL, VERTICAL};
     
     private final int linha;
     private final int coluna;
     private final int tamanho;
  
-    int tirosAcertados = 0;
+    private boolean afundado = false;
+    private int tirosAcertados = 0;
     private final Orientacao orientacao;
 
     public Barco(int linha, int coluna, int tamanho, Orientacao orientacao) {
@@ -21,15 +29,15 @@ public class Barco {
      public int getTirosAcertados() {
         return tirosAcertados;
     }
-
+     
 
     
     private void incrementaTirosAcertados(){
         this.tirosAcertados++;
     }
     
-    public boolean afundou (){
-        return tirosAcertados == tamanho;
+    public void afundou (){
+        if( tirosAcertados == tamanho) afundado = true;
     }
 
     public int getLinha() {
@@ -52,12 +60,14 @@ public class Barco {
         if(orientacao==Orientacao.HORIZONTAL) {
             if(linhaa == linha && colunaa >= coluna && colunaa < coluna + tamanho){
                 incrementaTirosAcertados();
+                afundou();
                 return true;
             }
         }
         else {
             if(colunaa == coluna && linhaa >= linha && linhaa < linha + tamanho){
                 incrementaTirosAcertados();
+                afundou();
                 return true;
             }
         }

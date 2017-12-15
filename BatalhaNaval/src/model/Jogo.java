@@ -1,5 +1,7 @@
 package model;
 
+import java.util.List;
+
 public class Jogo {
 
     enum Turno {
@@ -22,8 +24,11 @@ public class Jogo {
 
     private Jogador jogador1;
     private Jogador jogador2;
-
+    
+    
     private Turno turno = Turno.jogador1;
+
+    
 
 
     public Jogo(Jogador jogador1, Jogador jogador2) {
@@ -38,6 +43,7 @@ public class Jogo {
     public Jogador getJogador2() {
         return jogador2;
     }
+
 
     public void mudarTurno() {
         turno = turno.mudarTurno();
