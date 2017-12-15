@@ -3,6 +3,10 @@ package model;
 import java.util.List;
 
 public class Jogador {
+
+    /**
+     * @param barcos the barcos to set
+     */
     private String nome;
     private Tabuleiro tabuleiroProprio;
     private Tabuleiro tabuleiroEnimigo;
@@ -25,10 +29,13 @@ public class Jogador {
     public List<Barco> getBarcos() {
         return barcos;
     }
-    
-    public boolean perdi(){
-       return barcos.stream().noneMatch(barco -> !barco.isAfundado());
+
+    public boolean perdi() {
+        return barcos.stream().noneMatch(barco -> !barco.isAfundado());
     }
-    
-    
+
+    public void setBarcos(List<Barco> barcos) {
+        this.barcos = barcos;
+    }
+
 }
