@@ -23,9 +23,14 @@ public class Jogo {
     private Jogador jogador1;
     private Jogador jogador2;
 
-    Turno turno = Turno.jogador1;
+    private Turno turno = Turno.jogador1;
 
 
+    public Jogo(Jogador jogador1, Jogador jogador2) {
+        this.jogador1 = jogador1;
+        this.jogador2 = jogador2;
+    }
+    
     public Jogador getJogador1() {
         return jogador1;
     }
@@ -39,9 +44,11 @@ public class Jogo {
     }
 
 
-    public Jogo(Jogador jogador1, Jogador jogado2) {
-        this.jogador1 = jogador1;
-        this.jogador2 = jogador2;
+    public Jogador jogadorAtual(){
+        if(turno == turno.jogador1){
+            return jogador1;
+        }
+        return jogador2;
     }
     
    

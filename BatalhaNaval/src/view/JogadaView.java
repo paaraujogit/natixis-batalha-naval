@@ -8,6 +8,7 @@ package view;
 import controller.JogadaController;
 import java.util.Scanner;
 import model.Jogador;
+import model.Jogo;
 import model.Tabuleiro;
 import utils.Utils;
 
@@ -17,11 +18,13 @@ import utils.Utils;
  */
 public class JogadaView {
     
-    public JogadaController jc = new  JogadaController(Jogo jogo);
+    private Jogo jogo;
+    public JogadaController jc = new  JogadaController(jogo);
+ 
     
-    public void jogadaView(Jogador jogador){
+    public void jogadaView(Jogo jogo){
         
-        Utils.printTabuleiro(jogador.getTabuleiroEnimigo());
+        Utils.printTabuleiro(jogo.jogadorAtual().getTabuleiroEnimigo());
         Scanner scan = new Scanner(System.in);
         int linha=-1;
         
