@@ -22,8 +22,10 @@ public class Barco {
         return tirosAcertados;
     }
 
-    public void setTirosAcertados(int tirosAcertados) {
-        this.tirosAcertados = tirosAcertados;
+
+    
+    public void incrementaTirosAcertados(){
+        this.tirosAcertados++;
     }
     
     public boolean afundou (){

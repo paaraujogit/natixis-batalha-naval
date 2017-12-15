@@ -22,11 +22,21 @@ public class Jogo {
     Jogador jogado2;
     
     Turno turno = Turno.jogador1;
+
+    public Jogo(Jogador jogador1, Jogador jogado2) {
+        this.jogador1 = jogador1;
+        this.jogado2 = jogado2;
+    }
+    
+    
     
     
     public void mudarTurno(){
        turno = turno.mudarTurno();
     }
     
+    public void jogo(){
+        
+    }
    
 }
