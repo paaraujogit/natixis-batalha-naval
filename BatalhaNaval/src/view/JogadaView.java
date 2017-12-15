@@ -17,7 +17,7 @@ import utils.Utils;
  */
 public class JogadaView {
     
-    public JogadaController jc = new  JogadaController();
+    public JogadaController jc = new  JogadaController(Jogo jogo);
     
     public void jogadaView(Jogador jogador){
         
