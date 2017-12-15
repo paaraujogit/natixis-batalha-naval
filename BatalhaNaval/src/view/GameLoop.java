@@ -16,6 +16,7 @@ public class GameLoop {
     
     
     public static void main(String[] args) {
+       
         IniciarTabuleiroController init = new IniciarTabuleiroController();
     
         while(true){    

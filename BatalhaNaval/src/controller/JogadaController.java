@@ -7,6 +7,8 @@ import model.Posicao.Estado;
 
 public class JogadaController {
 
+    
+    
     private Jogo jogo;
     private Jogador jogador1;
     private Jogador jogador2;
