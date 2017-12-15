@@ -9,6 +9,7 @@ import controller.JogadaController;
 import java.util.Scanner;
 import model.Jogo;
 import model.Posicao;
+import model.Tabuleiro;
 import utils.Utils;
 
 /**
@@ -25,7 +26,7 @@ public class JogadaView {
         Scanner scan = new Scanner(System.in);
         int linha=-1;
         int coluna = -1;
-        /*
+        
         do{
             while(linha<0 || linha > Tabuleiro.COLUNAS){
             System.out.println("Insere o número da linha 0-9: ");
@@ -38,13 +39,15 @@ public class JogadaView {
                 coluna = scan.nextInt();
         }
         
-        
-        }while(jc.jogadaValida(linha, coluna));
+        if (!jc.jogadaValida(linha, coluna)){
+            System.out.println("Jogada inválida. Submeta outra.");
+        }
+        }while(!jc.jogadaValida(linha, coluna));
         
         jc.fazerJogada(linha, coluna);
         Utils.printTabuleiro(jogo.jogadorAtual().getTabuleiroEnimigo());
         jc.mudarTurno(jogo);
-        */
+        
         
     }
     
