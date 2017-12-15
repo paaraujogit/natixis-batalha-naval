@@ -5,11 +5,11 @@ import model.Barco;
 
 public class PosicaoBarcosView {
 
-    public static void main(String[] args) {
-        pedirBarco(3);
+    public void main(String[] args) {
+        colocarBarco(3);
     }
 
-    public static void pedirBarco(int tamanho) {
+    public void colocarBarco(int tamanho) {
         Scanner sc = new Scanner(System.in);
 
         System.out.println("Qual a posicão do barco de tamanho " + tamanho);
